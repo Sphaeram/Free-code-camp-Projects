@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
+const path = require("path");
 const User = require("../models/User");
 
 app.use(cors());

@@ -1,10 +1,12 @@
 {
-  "name": "fcc-exercise-tracker",
-  "version": "0.1.0",
-  "description": "A REST API project, part of Free Code Camp's curriculum",
+  "name": "exercise-tracker_micro-service",
+  "version": "1.0.0",
+  "description": "API project for freeCodeCamp",
+  "author": "Sameer",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch index.js"
+    "start": "node index.js",
+    "dev": "node --watch ./api/index.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",

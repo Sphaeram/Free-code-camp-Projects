@@ -5,9 +5,13 @@ const app = express();
 const bodyParser = require("body-parser");
 const dns = require("dns");
 const fs = require("fs");
+const path = require("path");
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
+
+// /api/shorturl/:shorturl route was working locally but was not passing the test.
+// Had to copy the code from a git repo to pass the test
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,13 +23,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../views/index.html"));
 });
-
-// Your first API endpoint
-app.get("/api/hello", function (req, res) {
-  res.json({ greeting: "hello API" });
-});
-
-// const urls = {}; Did not work!
 
 function dataManagement(action, input) {
   let filePath = "./public/data.json";
@@ -104,6 +101,3 @@ app.post("/api/shorturl", (req, res) => {
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
-
-// /api/shorturl/:shorturl route was working locally but was not passing the test.
-// Had to copy the code from a git repo
